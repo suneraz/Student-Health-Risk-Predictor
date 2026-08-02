@@ -37,14 +37,12 @@ RISK_INFO = {
 # and cards get soft shadows, rounded corners, and light borders.
 st.markdown("""
 <style>
-/* Use almost the full width of the screen, no more tiny centered column.
-   All sizes below use clamp()/vh so they shrink automatically on shorter
-   or smaller screens (e.g. MacBook displays) instead of forcing a scroll. */
+/* Use almost the full width of the screen, no more tiny centered column */
 .block-container{
-  padding-top: clamp(0.4rem, 1.5vh, 1.4rem);
-  padding-bottom: clamp(0.3rem, 1vh, 1rem);
-  padding-left: clamp(1rem, 3vw, 3rem);
-  padding-right: clamp(1rem, 3vw, 3rem);
+  padding-top: 1.4rem;
+  padding-bottom: 1.2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   max-width: 1800px;
 }
 
@@ -52,20 +50,20 @@ st.markdown("""
 .app-header{
   display: flex;
   align-items: center;
-  gap: clamp(10px, 1.5vw, 18px);
+  gap: 18px;
   background: linear-gradient(135deg, #FFFFFF 0%, #F3F6FD 100%);
   border: 1px solid #ECE9E2;
   border-radius: 14px;
-  padding: clamp(8px, 1.8vh, 18px) clamp(14px, 2vw, 28px);
+  padding: 18px 28px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-  margin-bottom: clamp(0.5rem, 1.5vh, 1.1rem);
+  margin-bottom: 1.1rem;
 }
 .app-header .icon-badge{
-  font-size: clamp(1.4rem, 2.5vh, 2.3rem);
+  font-size: 2.3rem;
   background: #EAF0FE;
   border-radius: 12px;
-  width: clamp(38px, 6vh, 58px);
-  height: clamp(38px, 6vh, 58px);
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,12 +71,12 @@ st.markdown("""
 }
 .app-header h1{
   margin: 0;
-  font-size: clamp(1.15rem, 2.6vh, 1.9rem);
+  font-size: 1.9rem;
   line-height: 1.2;
 }
 .app-header .subtitle{
   color: #6B7280;
-  font-size: clamp(0.75rem, 1.5vh, 0.95rem);
+  font-size: 0.95rem;
   margin-top: 2px;
 }
 
@@ -87,20 +85,20 @@ st.markdown("""
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: clamp(1rem, 2vh, 1.25rem);
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: clamp(0.3rem, 1vh, 0.6rem);
+  margin-bottom: 0.6rem;
 }
 .section-title .badge{
   background: #EAF0FE;
   color: #2563EB;
   border-radius: 8px;
-  width: clamp(26px, 4vh, 34px);
-  height: clamp(26px, 4vh, 34px);
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(0.85rem, 1.8vh, 1.05rem);
+  font-size: 1.05rem;
 }
 
 /* Metric cards row */
@@ -108,10 +106,10 @@ div[data-testid="stMetric"]{
   background: #FAFAF8;
   border: 1px solid #ECE9E2;
   border-radius: 10px;
-  padding: clamp(4px, 1vh, 10px) 16px clamp(2px, 0.6vh, 6px) 16px;
+  padding: 10px 16px 6px 16px;
 }
 div[data-testid="stMetricValue"]{
-  font-size: clamp(1.1rem, 2.4vh, 1.5rem);
+  font-size: 1.5rem;
 }
 
 /* Card containers (form + result) */
@@ -123,56 +121,22 @@ div[data-testid="stVerticalBlockBorderWrapper"]{
 }
 div[data-testid="stVerticalBlockBorderWrapper"] > div > div[data-testid="stVerticalBlock"]{
   padding: 6px 6px;
-  gap: clamp(0.25rem, 0.8vh, 0.9rem) !important;
 }
 
 /* Slightly bigger captions acting as sub-section labels */
 .stCaption, [data-testid="stCaptionContainer"]{
-  font-size: clamp(0.8rem, 1.6vh, 0.95rem) !important;
+  font-size: 0.95rem !important;
   font-weight: 600;
   color: #374151 !important;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 /* Buttons */
 .stButton>button, .stFormSubmitButton>button{
   border-radius: 8px;
-  font-size: clamp(0.9rem, 1.8vh, 1.02rem);
-  padding: clamp(0.35rem, 1vh, 0.6rem) 1rem;
+  font-size: 1.02rem;
+  padding: 0.6rem 1rem;
 }
-
-/* Tighten Streamlit's own vertical gaps between widgets so everything
-   compresses together on shorter screens */
-div[data-testid="stVerticalBlock"]{
-  gap: clamp(0.2rem, 0.7vh, 0.6rem);
-}
-div[data-testid="stForm"]{
-  border: none;
-  padding: 0;
-}
-
-/* Extra squeeze on short displays (typical MacBook logical heights) */
-@media (max-height: 900px){
-  .block-container{ padding-top: 0.3rem; padding-bottom: 0.4rem; }
-  .app-header{ padding: 8px 18px; margin-bottom: 0.5rem; }
-  div[data-testid="stVerticalBlock"]{ gap: 0.2rem; }
-}
-@media (max-height: 760px){
-  .app-header h1{ font-size: 1.05rem; }
-  .app-header .subtitle{ display: none; }
-  .section-title{ margin-bottom: 0.2rem; }
-}
-
-/* Compress spacing around individual widgets (label + control) */
-div[data-testid="stWidgetLabel"] p{
-  font-size: clamp(0.78rem, 1.5vh, 0.92rem);
-  margin-bottom: 0.1rem;
-}
-div[data-testid="stSlider"], div[data-testid="stNumberInput"],
-div[data-testid="stSelectbox"]{
-  margin-bottom: 0;
-}
-hr{ margin: clamp(0.2rem, 0.8vh, 0.5rem) 0 !important; }
 
 /* Prediction banner */
 .pred-banner{
