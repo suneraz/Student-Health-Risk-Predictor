@@ -49,7 +49,7 @@ cd webapp
 pip3 install fastapi uvicorn pandas scikit-learn lightgbm joblib
 uvicorn api:app --reload --port 8000
 ```
-Open **http://localhost:8000/docs** for interactive Swagger documentation — you can
+Open **http://localhost:8000/docs** for interactive Swagger documentation - you can
 test the `/predict` endpoint directly from that page without writing any code.
 
 Example request (from a second terminal, while the server is running):
