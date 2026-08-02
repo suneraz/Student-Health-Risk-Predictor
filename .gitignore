@@ -1,0 +1,21 @@
+# Raw Kaggle data - too large for GitHub, and not yours to redistribute.
+# Anyone using this repo should download it fresh from the competition page.
+train.csv
+test.csv
+
+# Python cache/build artifacts
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.venv/
+venv/
+env/
+
+# Logs
+*.log
