@@ -19,7 +19,7 @@ The dataset contains approximately **690,000 training records**, thirteen input 
 The following models were trained and compared:
 
 1. **XGBoost Classifier**
-2. **Neural Network — MLPClassifier**
+2. **Neural Network**
 3. **Random Forest Classifier**
 
 ### Model Performance
