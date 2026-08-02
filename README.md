@@ -1,7 +1,6 @@
-# Student Health Risk Predictor — Project Files
+# Student Health Risk Predictor - Project Files
 
-CIS 6005 Computational Intelligence — WRIT1 Mini Project
-Kaggle competition: [Playground Series S6E7 — Predicting Student Health Risk](https://www.kaggle.com/competitions/playground-series-s6e7)
+Kaggle competition: [Playground Series S6E7 - Predicting Student Health Risk](https://www.kaggle.com/competitions/playground-series-s6e7)
 
 **Note:** `submission.csv` (for your Kaggle leaderboard upload) is provided as a
 separate download, not inside this package.
@@ -9,7 +8,7 @@ separate download, not inside this package.
 ## What's in here
 
 ```
-Student_Health_Risk_Report.docx/.pdf   ← YOUR REPORT — submit this to Moodle/Turnitin
+Student_Health_Risk_Report.docx/.pdf   ← YOUR REPORT - submit this to Moodle/Turnitin
 train_model.py                          ← full production pipeline (LightGBM, all 690k rows)
 
 model_artifacts/
@@ -99,7 +98,6 @@ Takes about 4 minutes; reproduces `final_model.pkl`, `preprocessing.pkl` and a f
 
 | Model | Accuracy | Macro F1 | ROC-AUC | Notes |
 |---|---|---|---|---|
-| LightGBM (production, full data) | 94.0% | 0.867 | — | Deployed in both apps |
 | XGBoost (150k sample) | 96.6% | 0.906 | 0.982 | Best of the notebook comparison |
 | Neural Network (150k sample) | 96.4% | 0.900 | 0.980 | Very close second — needed StandardScaler |
 | Random Forest (150k sample) | 94.6% | 0.875 | 0.978 | |
