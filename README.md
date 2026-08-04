@@ -24,13 +24,13 @@ The following models were trained and compared:
 
 ### Model Performance
 
-| Model | Macro F1-score |
-|---|---:|
-| XGBoost | 0.9076 |
-| Neural Network | 0.9000 |
-| Random Forest | 0.8750 |
+| Model | Accuracy | Macro Precision | Macro Recall | Macro F1-score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| XGBoost | 0.9671 | 0.9543 | 0.8724 | 0.9098 | 0.9837 |
+| Neural Network | 0.9662 | 0.9625 | 0.8598 | 0.9055 | 0.9822 |
+| Random Forest | 0.9403 | 0.8099 | 0.9431 | 0.8661 | 0.9781 |
 
-XGBoost produced the best overall result, with approximately **96.6% test accuracy** and the highest macro F1-score.
+XGBoost produced the best overall result, with approximately **96.7% test accuracy** and the highest macro F1-score.
 
 ## Main Features
 
