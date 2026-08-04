@@ -49,35 +49,53 @@ XGBoost produced the best overall result, with approximately **96.6% test accura
 ```text
 Predicting Student Health Risk/
 │
-├── comparison_models/
-│   ├── load_and_predict_example.py
-│   ├── neural_network_model.pkl
-│   ├── random_forest_model.pkl
-│   └── xgboost_model.pkl
+├── .devcontainer/
+│   └── devcontainer.json
 │
-├── model_artifacts/
-│   ├── preprocessing.pkl
-│   ├── neural_network_model.pkl
-│   ├── random_forest_model.pkl
-│   └── xgboost_model.pkl
+├── EDA/
+│   ├── eda_plots/
+│   │   ├── categorical_by_target.png
+│   │   ├── categorical_distributions.png
+│   │   ├── class_distribution.png
+│   │   ├── correlation.png
+│   │   ├── numeric_by_target.png
+│   │   └── numeric_distributions.png
+│   ├── generate_eda_charts.py
+│   └── train.csv
 │
 ├── notebooks/
-│   ├── eda_plots/
-│   ├── generate_eda_charts.py
 │   ├── neural_network_model.ipynb
+│   ├── neural_network_model.pkl
 │   ├── random_forest_model.ipynb
+│   ├── random_forest_model.pkl
 │   ├── xgboost_model.ipynb
+│   ├── xgboost_model.pkl
 │   ├── train.csv
 │   └── test.csv
 │
+├── submissions/
+│   ├── generate_submissions.py
+│   ├── neural_network_model.pkl
+│   ├── random_forest_model.pkl
+│   ├── xgboost_model.pkl
+│   ├── train.csv
+│   ├── test.csv
+│   └── submissions/
+│       ├── submission_neural_network.csv
+│       ├── submission_random_forest.csv
+│       └── submission_xgboost.csv
+│
 ├── webapp/
+│   ├── .streamlit/
+│   │   └── config.toml
 │   ├── api.py
 │   ├── streamlit_app.py
-│   ├── requirements.txt
 │   ├── preprocessing.pkl
-│   └── trained model files
+│   ├── neural_network_model.pkl
+│   ├── random_forest_model.pkl
+│   ├── xgboost_model.pkl
+│   └── requirements.txt
 │
-├── train_model.py
 ├── .gitignore
 └── README.md
 ```
@@ -168,13 +186,13 @@ http://127.0.0.1:8000/docs
 
 ## Training the Models
 
-To run the main model-training script:
+Each model was trained and evaluated separately using the notebooks inside the `notebooks` directory:
 
-```bash
-python train_model.py
-```
+- `xgboost_model.ipynb`
+- `neural_network_model.ipynb`
+- `random_forest_model.ipynb`
 
-The notebooks inside the `notebooks` directory can also be used to review the separate training and evaluation process for each model.
+Each notebook covers preprocessing, training, evaluation, and saving the resulting `.pkl` model file. Submission files for each model can be regenerated using `submissions/generate_submissions.py`.
 
 ## Exploratory Data Analysis
 
